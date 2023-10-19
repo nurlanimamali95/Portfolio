@@ -8,6 +8,7 @@ module.exports = {
       },
       colors: {
         buttery: "#e5fddb",
+        nurlan: "#2e3532",
       },
     },
   },

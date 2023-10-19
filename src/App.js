@@ -1,10 +1,12 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import Header from "./sections/Header";
+import About from "./sections/About";
 
 const App = () => {
   return (
-    <div className="font-rubik text-buttery">
-      <Navbar />
+    <div className="font-rubik text-buttery ">
+      <Header />
+      <About />
     </div>
   );
 };
