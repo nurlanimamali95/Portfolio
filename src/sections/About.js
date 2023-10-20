@@ -18,9 +18,6 @@ const Analytics = () => {
             and functionality in code. As a lifelong web explorer, I'm here to
             turn your ideas into digital realities.
           </p>
-          <button className="bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3">
-            Get Started
-          </button>
         </div>
       </div>
     </div>
