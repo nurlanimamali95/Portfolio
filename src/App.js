@@ -7,7 +7,7 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   return (
-    <div className="md:font-rubik text-buttery ">
+    <div className="font-rubik text-buttery ">
       <Header />
       <About />
       <Projects />
