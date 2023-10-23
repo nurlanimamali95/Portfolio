@@ -8,14 +8,53 @@ const Footer = () => {
       </p>
       <p>
         <ul className="md:flex mx-5 space-x-2">
-          <li className="group">Social</li>
-          <li className="group">LINKEDIN</li>
-          <li className="group">GitHub</li>
-          <li className="group">Behance</li>
-          <li className="group">Instagram</li>
+          <li className="group relative inline-block">Social</li>
+          <li className="group relative inline-block">
+            <a
+              href="https://www.linkedin.com/in/nurlanimamali/"
+              target="_blank"
+              rel="noreferrer"
+              className=""
+            >
+              LinkedIn
+            </a>
+            <div className="absolute w-0 h-1 bg-[#00Df9a] group-hover:w-full transition-all duration-300 ease-in-out origin-left"></div>
+          </li>
+          <li className="group relative inline-block">
+            <a
+              href="https://github.com/nurlanimamali95"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Github
+            </a>
+            <div className="absolute w-0 h-1 bg-[#00Df9a] group-hover:w-full transition-all duration-300 ease-in-out origin-left"></div>
+          </li>
+          <li className="group relative inline-block">
+            <a
+              href="https://www.behance.net/nurlanimamali"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Behance
+            </a>
+            <div className="absolute w-0 h-1 bg-[#00Df9a] group-hover:w-full transition-all duration-300 ease-in-out origin-left"></div>
+          </li>
+          <li className="group relative inline-block">
+            <a
+              href="https://www.instagram.com/nurlanimamali/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+            <div className="absolute w-0 h-1 bg-[#00Df9a] group-hover:w-full transition-all duration-300 ease-in-out origin-left"></div>
+          </li>
         </ul>
       </p>
-      <p className="mx-5">Back to the top</p>
+      <p className="mx-5">
+        <a></a>
+      </p>
     </div>
   );
 };
