@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Button from "./Button";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -13,7 +14,15 @@ const Navbar = () => {
     <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4">
       <h1 className="w-full text-3xl font-bold ">NI.</h1>
       <ul className="hidden md:flex items-baseline">
-        <li className="p-4">Projects</li>
+        <li className="p-4 cursor-pointer">
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            duration={500}
+          >
+            Projects
+          </ScrollLink>
+        </li>
         <li className="p-4">
           <Button className="mt-0" title="Contact Me" />
         </li>
