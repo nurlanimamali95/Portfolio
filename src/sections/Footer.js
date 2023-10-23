@@ -8,13 +8,14 @@ const Footer = () => {
       </p>
       <p>
         <ul className="md:flex mx-5 space-x-2">
-          <li className="group relative inline-block">Social</li>
+          <li className="flex items-baseline  group relative ">
+            <div class="w-4 h-4 bg-buttery rounded-full mr-2"></div>Social
+          </li>
           <li className="group relative inline-block">
             <a
               href="https://www.linkedin.com/in/nurlanimamali/"
               target="_blank"
               rel="noreferrer"
-              className=""
             >
               LinkedIn
             </a>
