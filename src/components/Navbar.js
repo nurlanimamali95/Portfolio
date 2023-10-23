@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4">
       <h1 className="w-full text-3xl font-bold ">NI.</h1>
       <ul className="hidden md:flex items-baseline">
-        <li className="p-4 cursor-pointer hover:text-[#00df9a]">
+        <li className="p-4 cursor-pointer hover:text-[#00df9a] ">
           <ScrollLink to="projects" smooth={true} duration={500}>
             Projects
           </ScrollLink>
