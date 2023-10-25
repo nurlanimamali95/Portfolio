@@ -1,20 +1,15 @@
 import React from "react";
-import Header from "./sections/Header";
-import About from "./sections/About";
-import Projects from "./sections/Projects";
-import Work from "./sections/Work";
-import Footer from "./sections/Footer";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="font-rubik text-buttery ">
-      <Header />
-      <About />
-      <Projects />
-      <Work />
-      <Footer />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 };
