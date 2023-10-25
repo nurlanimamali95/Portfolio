@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import Button from "./Button";
+import Button from "../components/Button";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -12,7 +13,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4">
-      <h1 className="w-full text-3xl font-bold ">NI.</h1>
+      <h1 className="w-full text-3xl font-bold ">
+        <Link to="/">NI.</Link>
+      </h1>
       <ul className="hidden md:flex items-baseline">
         <li className="p-4 cursor-pointer hover:text-[#00df9a] ">
           <ScrollLink to="projects" smooth={true} duration={500}>
@@ -20,7 +23,7 @@ const Navbar = () => {
           </ScrollLink>
         </li>
         <li className="p-4">
-          <Button className="mt-0" title="Contact Me" />
+          <Button className="mt-0" title="Contact Me" url="/contact" />
         </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">

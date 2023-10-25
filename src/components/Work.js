@@ -7,7 +7,11 @@ const Work = () => {
       <h3 className="md:text-5xl sm:text-4xl text-3xl font-medium md:py-6">
         Liked what you just saw?
       </h3>
-      <Button className="flex justify-center items-center" title="Contact Me" />
+      <Button
+        className="flex justify-center items-center"
+        title="Contact Me"
+        url="/contact"
+      />
     </div>
   );
 };
