@@ -8,6 +8,9 @@ import Card4 from "../assets/MarioQuiz (2).png";
 const Projects = () => {
   return (
     <div id="projects" className="w-full py-[10rem] px-4 bg-nurlan">
+      <div className="text-center mb-[8em]">
+        <h1 className="text-4xl font-bold">Projects</h1>
+      </div>
       <div className="max-w-[1500px] mx-auto grid md:grid-cols-2 gap-20">
         <Card image={Card1} />
         <Card image={Card2} />
@@ -18,4 +21,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;  
+export default Projects;

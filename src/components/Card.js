@@ -4,7 +4,7 @@ import Button from "./Button";
 const Card = (props) => {
   return (
     <div className="">
-      <div className="w-full h-500 shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300">
+      <div className="w-full h-500 shadow-xl flex flex-col p-4 my-4 rounded-lg ">
         <div className="inline-block h-80 mx-auto mt-[-3rem] bg-white">
           <img
             src={props.image}
