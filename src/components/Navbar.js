@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Button from "../components/Button";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
 import AnimatedLogo from "./AnimatedLogo";
 
 const Navbar = () => {
@@ -14,9 +13,9 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4">
-      <Link to="/">
-        <AnimatedLogo className="w-10" />
-      </Link>
+      <div className="cursor-pointer">
+        <AnimatedLogo />
+      </div>
 
       <ul className="hidden md:flex items-baseline">
         <li className="p-4 cursor-pointer hover:text-[#00df9a] ">
@@ -33,7 +32,7 @@ const Navbar = () => {
       </div>
       <div
         className={
-          !nav
+          nav
             ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#56655f] ease-in-out duration-500"
             : "fixed left-[-100%]"
         }
