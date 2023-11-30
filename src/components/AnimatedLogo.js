@@ -24,9 +24,12 @@ const pathVariants = {
     transition: {
       duration: 3,
       ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: 'mirror',
     },
   },
 };
+
 const AnimatedLogo = () => {
   return (
     <motion.svg
