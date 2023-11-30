@@ -1,9 +1,12 @@
 import React from "react";
 import Card from "../components/Card";
-import Card1 from "../assets/AlbumSpotter.png";
-import Card2 from "../assets/ArtMuseum.png";
-import Card3 from "../assets/BookYourFuture.png";
-import Card4 from "../assets/MarioQuiz (2).png";
+
+const cardImages = [
+  require("../assets/AlbumSpotter.png"),
+  require("../assets/ArtMuseum.png"),
+  require("../assets/BookYourFuture.png"),
+  require("../assets/MarioQuiz (2).png"),
+];
 
 const Projects = () => {
   return (
@@ -12,10 +15,9 @@ const Projects = () => {
         <h1 className="text-4xl font-bold">Projects</h1>
       </div>
       <div className="max-w-[1500px] mx-auto grid md:grid-cols-2 gap-20">
-        <Card image={Card1} />
-        <Card image={Card2} />
-        <Card image={Card3} />
-        <Card image={Card4} />
+        {cardImages.map((image, index) => (
+          <Card key={index} image={image} />
+        ))}
       </div>
     </div>
   );
