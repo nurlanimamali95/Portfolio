@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4">
+    <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4 select-none">
       <div className="cursor-pointer">
         <AnimatedLogo />
       </div>

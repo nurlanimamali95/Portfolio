@@ -19,7 +19,7 @@ const Hero = () => {
     deleteSpeed: 60,
   });
   return (
-    <div className="text-buttery">
+    <div className="text-buttery select-none">
       <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <p className="font-bold p-2 uppercase"></p>
         <h1 className="md:text-5xl sm:text-4xl text-3xl font-medium md:py-6">
@@ -29,7 +29,7 @@ const Hero = () => {
           <p>
             Creating Websites with{" "}
             <span className="text-[#00df9a]">{typeEffect}</span>
-            <Cursor cursorStyle="❤️" cursorBlinking="false"/>
+            <Cursor cursorStyle="❤️" cursorBlinking="false" />
           </p>
         </div>
         <Button title="Say Hello" />
