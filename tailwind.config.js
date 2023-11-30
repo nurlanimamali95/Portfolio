@@ -10,6 +10,9 @@ module.exports = {
         buttery: "#e5fddb",
         nurlan: "#2e3532",
       },
+      userSelect: {
+        none: "none",
+      },
     },
   },
   plugins: [],
