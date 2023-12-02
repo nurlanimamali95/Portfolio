@@ -20,14 +20,16 @@ const hoverVariants = {
 const Button = (props) => {
   return (
     <motion.div className="m-6">
-      <motion.button
-        onClick={props.onClick}
-        className="bg-[#00df9a] text-nurlan w-[150] rounded-md font-medium mx-auto px-6 py-3 hover:bg-black hover:text-[#00df9a] my-6 md:mx-0"
-        variants={hoverVariants}
-        whileHover="visible"
-      >
-        <Link to={props.url}>{props.title}</Link>
-      </motion.button>
+      <Link to={props.url}>
+        <motion.button
+          onClick={props.onClick}
+          className="bg-[#00df9a] text-nurlan w-[150] rounded-md font-medium mx-auto px-6 py-3 hover:bg-black hover:text-[#00df9a] my-6 md:mx-0"
+          variants={hoverVariants}
+          whileHover="visible"
+        >
+          {props.title}
+        </motion.button>
+      </Link>
     </motion.div>
   );
 };
