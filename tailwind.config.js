@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         buttery: "#e5fddb",
         nurlan: "#2e3532",
+        mygreen: "#00df9a",
       },
       userSelect: {
         none: "none",
