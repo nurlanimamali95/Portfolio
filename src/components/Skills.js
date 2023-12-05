@@ -34,10 +34,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="w-full py-[10rem] bg-buttery px-4 mb-28 scroll-mt-28 text-center sm:mb-40 flex flex-col justify-center items-center h-screen"
+      className="w-full bg-buttery px-4 py-[8rem]  mb-28 scroll-mt-28 text-center sm:mb-40 flex flex-col items-center h-screen"
     >
       <div>
-        <h1 className="text-4xl font-bold mb-20 text-nurlan">My Skills</h1>
+        <h1 className="text-4xl font-bold mb-20 text-nurlan ">My Skills</h1>
       </div>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 max-w-[53rem] ">
         {skillsData.map((skill, index) => (

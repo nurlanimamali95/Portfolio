@@ -10,9 +10,9 @@ const cardImages = [
 
 const Projects = () => {
   return (
-    <div id="projects" className="w-full py-[10rem] px-4 bg-nurlan">
+    <div id="projects" className="w-full py-[8rem] px-4 bg-nurlan">
       <div className="text-center mb-[8em]">
-        <h1 className="text-4xl font-bold">Projects</h1>
+        <h1 className="text-4xl font-bold py-2 ">Projects</h1>
       </div>
       <div className="max-w-[1500px] mx-auto grid md:grid-cols-2 gap-20">
         {cardImages.map((image, index) => (

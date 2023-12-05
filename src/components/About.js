@@ -3,13 +3,13 @@ import Laptop from "../assets/Laptop4.jpg";
 
 const Analytics = () => {
   return (
-    <div className=" bg-buttery text-nurlan w-full bg-white py-16 px-4">
+    <div className=" bg-buttery text-nurlan w-full  px-4">
       <div className="text-center">
-        <h1 className="md:text-4xl sm:text-3xl text-2xl font-medium py-2">
+        <h1 className="md:text-4xl sm:text-3xl text-2xl font-medium py-[2em]">
           A little bit about me
         </h1>
       </div>
-      <div className="max-w-[1240px] mx-auto grid md:grid-cols-2">
+      <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 py-1">
         <img className="w-[500px] mx-auto my-4" src={Laptop} alt="/" />
         <div className="flex flex-col justify-center">
           <h3 className="text-[#00df9a] font-medium md:text-2xl sm:text-1xl text-1xl my-4 py-2">
