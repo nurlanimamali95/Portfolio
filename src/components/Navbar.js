@@ -18,13 +18,15 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex items-baseline">
-        <li className="p-4 cursor-pointer hover:text-[#00df9a] ">
+        <li className="p-4 cursor-pointer hover:text-mygreen ">
           <ScrollLink to="projects" smooth={true} duration={500}>
             Projects
           </ScrollLink>
         </li>
-        <li className="p-4">
-          <Button className="mt-0" title="Contact Me" url="/contact" />
+        <li className="p-4 cursor-pointer hover:text-mygreen ">
+          <ScrollLink to="contact" smooth={true} duration={500}>
+            Contact Me
+          </ScrollLink>
         </li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
