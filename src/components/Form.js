@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="h-screen mb-[6em]">
+    <section id="contact" className="h-screen mb-[6em]">
       <div>
         <h3 className="text-center text-4xl font-bold">Contact me</h3>
       </div>
