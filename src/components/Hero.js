@@ -1,6 +1,7 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Button from "../components/Button";
+import AnimatedScroll from "./AnimatedScroll";
 
 const Hero = () => {
   const [typeEffect] = useTypewriter({
@@ -31,7 +32,9 @@ const Hero = () => {
             <Cursor cursorStyle="❤️" cursorBlinking="false" />
           </p>
         </div>
-        <Button title="Say Hello" />
+        <div className="mt-[3em] sm:mt-[6em] mx-auto">
+          <AnimatedScroll />
+        </div>
       </div>
     </div>
   );
