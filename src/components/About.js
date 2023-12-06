@@ -1,18 +1,49 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Laptop from "../assets/meillustration.png";
+import { motion } from "framer-motion";
+import "./About.css";
 
 const About = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(false);
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", mouseMove);
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+
+  const variants = {
+    visible: { x: mousePosition.x - 16, y: mousePosition.y - 16 },
+  };
+
+  const handleMouseEnter = () => {
+    setShowCursor(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowCursor(false);
+  };
+
   return (
-    <div className=" bg-buttery  text-nurlan w-full px-4">
+    <div
+      className="bg-buttery text-nurlan w-full px-4 about-container"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="text-center">
-        <h1 className=" font-bold md:text-4xl sm:text-3xl text-2xl py-[2em]">
+        <h1 className="font-bold md:text-4xl sm:text-3xl text-2xl py-[2em]">
           A little bit about me
         </h1>
       </div>
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 py-1">
         <img className="w-[25em] mx-auto my-4" src={Laptop} alt="/" />
         <div className="flex flex-col justify-center pb-[5em]">
-          <h3 className="text-[#00df9a] font-medium md:text-2xl sm:text-1xl text-1xl my-4 py-2">
+          <h3 className="text-mygreen font-medium md:text-2xl sm:text-1xl text-1xl my-4 py-2">
             Meet the Digital Wizard
           </h3>
           <p className="text-xl max-w-[28em]">
@@ -29,6 +60,11 @@ const About = () => {
           </p>
         </div>
       </div>
+      <motion.div
+        className={`cursor ${showCursor ? "visible" : "hidden"}`}
+        variants={variants}
+        animate={showCursor ? "visible" : "hidden"}
+      />
     </div>
   );
 };
