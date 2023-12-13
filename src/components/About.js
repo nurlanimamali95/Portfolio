@@ -5,6 +5,7 @@ import "./About.css";
 
 const About = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState("default");
   const [showCursor, setShowCursor] = useState(false);
 
   useEffect(() => {
@@ -19,19 +20,27 @@ const About = () => {
 
   const variants = {
     visible: { x: mousePosition.x - 16, y: mousePosition.y - 16 },
+    text: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      backgroundColor: "#00df9a",
+      mixBlendMode: "multiply",
+    },
   };
 
   const handleMouseEnter = () => {
     setShowCursor(true);
+    setCursorVariant("text");
   };
 
   const handleMouseLeave = () => {
     setShowCursor(false);
+    setCursorVariant("default");
   };
 
   return (
     <div
-      className="bg-buttery text-nurlan w-full px-4 about-container"
+      className="bg-buttery text-nurlan w-full px-4 about-container cursor-none"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -63,7 +72,7 @@ const About = () => {
       <motion.div
         className={`cursor ${showCursor ? "visible" : "hidden"}`}
         variants={variants}
-        animate={showCursor ? "visible" : "hidden"}
+        animate={cursorVariant}
       />
     </div>
   );
