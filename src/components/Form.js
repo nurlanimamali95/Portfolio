@@ -23,24 +23,28 @@ const Contact = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const isInView = useInView(ref, { margin: "-100px" });
-
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_94y20xo",
-        "template_v10u2oh",
+        "service_3hlu17w",
+        "template_w29y38k",
         formRef.current,
-        "pX_2hasGmGcuvjXIW"
+        "jTJHeT5uFZdIbRBSx"
       )
       .then(
         (result) => {
           setSuccess(true);
+          setTimeout(() => {
+            setSuccess(false);
+          }, 3000);
         },
         (error) => {
           setError(true);
+          setTimeout(() => {
+            setError(false);
+          }, 3000);
         }
       );
   };
@@ -50,6 +54,7 @@ const Contact = () => {
       <div>
         <h3 className="text-center text-4xl font-bold">Contact me</h3>
       </div>
+
       <motion.div
         ref={ref}
         className="h-full max-w-[1024px] flex gap-10 justify-between items-center mx-auto mb-10 px-4"
@@ -75,12 +80,6 @@ const Contact = () => {
           </motion.div>
         </motion.div>
         <div className="flex-1 relative">
-          <motion.div
-            className="phoneSvg"
-            initial={{ opacity: 1 }}
-            whileInView={{ opacity: 0 }}
-            transition={{ delay: 3, duration: 1 }}
-          ></motion.div>
           <motion.form
             ref={formRef}
             onSubmit={sendEmail}
@@ -92,14 +91,14 @@ const Contact = () => {
               type="text"
               required
               placeholder="Name"
-              name="name"
+              name="user_name"
               className="text-nurlan block w-full border-gray-300 rounded-md p-2 mb-4 "
             />
             <input
               type="email"
               required
               placeholder="Email"
-              name="email"
+              name="user_email"
               className="text-nurlan block w-full p-2 mb-4"
             />
             <textarea
@@ -111,9 +110,33 @@ const Contact = () => {
             <button className="bg-nurlan font-bold py-2 px-4 rounded-md hover:bg-buttery">
               Submit
             </button>
-            {error && <p className="text-red-500">Error</p>}
-            {success && <p className="text-green-500">Success</p>}
           </motion.form>
+          {success && (
+            <div className="absolute top-[-3em] left-0 transition-opacity duration-500 opacity-100 bg-green-400 p-2 rounded-md">
+              Message successfully sent! 😻
+            </div>
+          )}
+          {error && (
+            <div className="absolute top-[-3em] left-0 transition-opacity duration-500 opacity-100 bg-red-400 p-2 rounded-md">
+              Message could not be sent! 😿
+            </div>
+          )}
+          {/* <motion.div
+            className={`absolute top-[-3em] left-0 transition-opacity duration-500 ${
+              success ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {success && (
+              <div className="bg-green-400 p-2 rounded-md">
+                Message successfully sent! 😻
+              </div>
+            )}
+            {error && (
+              <div className="bg-red-400 p-2 rounded-md">
+                Message could not be sent! 😿
+              </div>
+            )}
+          </motion.div> */}
         </div>
       </motion.div>
     </section>
