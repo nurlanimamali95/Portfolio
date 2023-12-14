@@ -19,12 +19,16 @@ const About = () => {
   }, []);
 
   const variants = {
-    visible: { x: mousePosition.x - 16, y: mousePosition.y - 16 },
+    visible: { x: mousePosition.x - 16, y: mousePosition.y - 16, opacity: 0 },
     text: {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
+      height: 40,
+      width: 40,
       backgroundColor: "#00df9a",
-      mixBlendMode: "multiply",
+      mixBlendMode: "difference",
+      opacity: 1,
+      transition: { ease: "easeOut", duration: 0.5 },
     },
   };
 
