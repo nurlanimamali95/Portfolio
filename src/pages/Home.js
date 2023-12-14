@@ -6,6 +6,7 @@ import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import Skills from "../components/Skills";
 import Form from "../components/Form";
+import ScrollUp from "../components/ScrollToTop";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Skills />
       <Form />
       <Footer />
+      <ScrollUp />
     </div>
   );
 };
