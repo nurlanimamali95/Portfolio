@@ -1,6 +1,5 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import Button from "../components/Button";
 import AnimatedScroll from "./AnimatedScroll";
 
 const Hero = () => {
