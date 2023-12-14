@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const variants = {
@@ -22,6 +22,8 @@ const Contact = () => {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -121,22 +123,6 @@ const Contact = () => {
               Message could not be sent! 😿
             </div>
           )}
-          {/* <motion.div
-            className={`absolute top-[-3em] left-0 transition-opacity duration-500 ${
-              success ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            {success && (
-              <div className="bg-green-400 p-2 rounded-md">
-                Message successfully sent! 😻
-              </div>
-            )}
-            {error && (
-              <div className="bg-red-400 p-2 rounded-md">
-                Message could not be sent! 😿
-              </div>
-            )}
-          </motion.div> */}
         </div>
       </motion.div>
     </section>
