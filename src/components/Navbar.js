@@ -19,12 +19,24 @@ const Navbar = () => {
 
       <ul className="hidden md:flex items-baseline">
         <li className="p-4 cursor-pointer hover:text-mygreen ">
-          <ScrollLink to="projects" smooth={true} duration={500}>
+          <ScrollLink
+            to="projects"
+            spy={true}
+            offset={125}
+            smooth={true}
+            duration={500}
+          >
             Projects
           </ScrollLink>
         </li>
         <li className="p-4 cursor-pointer hover:text-mygreen ">
-          <ScrollLink to="contact" smooth={true} duration={500}>
+          <ScrollLink
+            to="contact"
+            spy={true}
+            offset={-20}
+            smooth={true}
+            duration={500}
+          >
             Contact Me
           </ScrollLink>
         </li>
