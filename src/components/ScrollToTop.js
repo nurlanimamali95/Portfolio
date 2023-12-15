@@ -3,7 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { FaArrowUp } from "react-icons/fa";
 
 const ScrollUp = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +29,12 @@ const ScrollUp = () => {
       {isVisible && (
         <div className="z-index-100">
           <ScrollLink to="/" spy={true} smooth={true} duration={500}>
-            <div className="fixed right-[2.5em] bottom-[3em] bg-nurlan p-[0.5em] opacity-[0.8] border-[0.1em] flex items-center justify-center">
-              <FaArrowUp onClick={scrollToTop} />
-            </div>
+            <button
+              onClick={scrollToTop}
+              className="fixed right-[0.5em] bottom-[3em] bg-nurlan p-[0.3em] opacity-[0.8] border-[0.1em] flex items-center justify-center md:p-[0.5em] hover:bg-buttery hover:text-nurlan hover:border-nurlan"
+            >
+              <FaArrowUp />
+            </button>
           </ScrollLink>
         </div>
       )}
