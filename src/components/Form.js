@@ -64,14 +64,16 @@ const Form = () => {
   };
 
   return (
-    <section id="contact" className="h-screen mb-[6em]">
+    <section id="contact" className="h-screen mb-[1em]">
       <div>
-        <h3 className="text-center text-4xl font-bold">Contact me</h3>
+        <h3 className="text-center text-4xl font-bold mb-[2em]">
+          Contact me
+        </h3>
       </div>
 
       <motion.div
         ref={ref}
-        className="h-full max-w-[1024px] flex gap-10 justify-between items-center mx-auto mb-10 px-4"
+        className="h-full max-w-[1024px] flex flex-col gap-10 justify-between items-center mx-auto mb-10 px-4 lg:flex-row"
         variants={variants}
         initial="initial"
         whileInView="animate"
@@ -93,13 +95,13 @@ const Form = () => {
             </span>
           </motion.div>
         </motion.div>
-        <div className="flex-1 relative">
+        <div className="flex-1 relative w-[80vw] mb-[5em]">
           <motion.form
             ref={formRef}
             onSubmit={sendEmail}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="bg-buttery p-6 rounded-md shadow-md"
+            className="bg-buttery p-6 rounded-md shadow-md mb-[5em] lg:mb-[0]"
           >
             <input
               type="text"

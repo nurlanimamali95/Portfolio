@@ -67,11 +67,11 @@ const About = () => {
             spans both front-end and back-end development, merging creativity
             and functionality in code. As a lifelong web explorer, I'm here to
             turn your ideas into digital realities. My faithful companion, Leo,
-            a mischievous but adorable tabby cat, often perches on my desk,
-            offering inspiration with his curious antics. He's an integral part
-            of my coding journey, providing unwavering support and occasional
-            distraction, reminding me to take breaks and appreciate the simple
-            joys in life.
+            a playful and utterly adorable white cat, often sits on my desk,
+            offering inspiration with his curious antics. Leo seems like a furry
+            little coding coach! His playful interruptions might just be a sign
+            to hit pause and regain some creative energy. Has he ever surprised
+            you by giving you an idea while he was goofing around?
           </p>
         </div>
       </div>

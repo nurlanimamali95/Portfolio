@@ -42,7 +42,7 @@ const Hero = () => {
     <div className="text-buttery select-none">
       <div className="max-w-[800px] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <motion.h1
-          className="md:text-5xl sm:text-4xl text-3xl font-medium md:py-6"
+          className="md:text-5xl sm:text-4xl text-4xl font-medium md:py-6"
           initial="hidden"
           animate="visible"
           variants={textVariants}
