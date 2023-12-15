@@ -36,6 +36,9 @@ const Form = () => {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -50,6 +53,9 @@ const Form = () => {
       .then(
         (result) => {
           setSuccess(true);
+          setName("");
+          setEmail("");
+          setMessage("");
           setTimeout(() => {
             setSuccess(false);
           }, 3000);
@@ -66,9 +72,7 @@ const Form = () => {
   return (
     <section id="contact" className="h-screen mb-[1em]">
       <div>
-        <h3 className="text-center text-4xl font-bold mb-[2em]">
-          Contact me
-        </h3>
+        <h3 className="text-center text-4xl font-bold mb-[2em]">Contact me</h3>
       </div>
 
       <motion.div
@@ -108,6 +112,8 @@ const Form = () => {
               required
               placeholder="Name"
               name="user_name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="text-nurlan block w-full border-gray-300 rounded-md p-2 mb-4 "
             />
             <input
@@ -115,12 +121,16 @@ const Form = () => {
               required
               placeholder="Email"
               name="user_email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="text-nurlan block w-full p-2 mb-4"
             />
             <textarea
               rows={8}
               placeholder="Message"
               name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className=" text-nurlan block w-full border-gray-300 rounded-md p-2 mb-4 resize-none"
             ></textarea>
             <motion.button
