@@ -32,7 +32,7 @@ const spanVariants = {
 
 const AnimatedScroll = () => {
   return (
-    <motion.div style={{ display: "flex", alignItems: "center" }}>
+    <motion.div className="flex items-center">
       <motion.svg
         width="50px"
         height="50px"
@@ -44,6 +44,7 @@ const AnimatedScroll = () => {
         variants={svgVariants}
         initial="hidden"
         animate="visible"
+        className="lg:mt-[-1em]"
       >
         <g id="SVGRepo_bgCarrier" stroke-width="0" />
 
@@ -80,7 +81,7 @@ const AnimatedScroll = () => {
         </g>
       </motion.svg>
       <motion.span
-        className="font-hairline"
+        className="font-hairline lg:mt-[-1em]"
         variants={spanVariants}
         initial="hidden"
         animate="visible"
