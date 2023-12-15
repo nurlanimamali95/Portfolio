@@ -57,8 +57,8 @@ const Card = (props) => {
         />
       </div>
       <div className="flex justify-center">
-        <Button className="" title="Demo" />
-        <Button className="" title="Source" />
+        <Button title="Demo" url={props.demoUrl} />
+        <Button title="Source" url={props.sourceUrl} />
       </div>
     </motion.div>
   );
