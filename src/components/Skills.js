@@ -31,49 +31,10 @@ const fadeInAnimationVariants = {
 };
 
 const Skills = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState("default");
-  const [showCursor, setShowCursor] = useState(false);
-
-  useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", mouseMove);
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
-  const variants = {
-    visible: { x: mousePosition.x - 16, y: mousePosition.y - 16, opacity: 0 },
-    text: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-      height: 40,
-      width: 40,
-      backgroundColor: "#00df9a",
-      mixBlendMode: "difference",
-      opacity: 1,
-      transition: { ease: "easeOut", duration: 0.5 },
-    },
-  };
-
-  const handleMouseEnter = () => {
-    setShowCursor(true);
-    setCursorVariant("text");
-  };
-
-  const handleMouseLeave = () => {
-    setShowCursor(false);
-    setCursorVariant("default");
-  };
   return (
     <section
       id="skills"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="w-full bg-buttery px-4 py-[8rem]  mb-28 scroll-mt-28 text-center sm:mb-40 flex flex-col items-center h-screen cursor-none"
+      className="w-full bg-buttery px-4 py-[8rem]  mb-28 scroll-mt-28 text-center sm:mb-40 flex flex-col items-center h-screen"
     >
       <div>
         <h1 className="text-4xl font-bold mb-20 text-nurlan ">My Skills</h1>
@@ -94,11 +55,6 @@ const Skills = () => {
             {skill}
           </motion.li>
         ))}{" "}
-        <motion.div
-          className={`cursor ${showCursor ? "visible" : "hidden"}`}
-          variants={variants}
-          animate={cursorVariant}
-        />
       </ul>
     </section>
   );
