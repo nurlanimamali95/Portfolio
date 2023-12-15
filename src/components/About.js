@@ -43,18 +43,20 @@ const About = () => {
   };
 
   return (
-    <div
-      className="bg-buttery text-nurlan w-full px-4 about-container cursor-none"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="bg-buttery text-nurlan w-full px-4 about-container">
       <div className="text-center">
         <h1 className="font-bold md:text-4xl sm:text-3xl text-2xl py-[2em]">
           A little bit about me
         </h1>
       </div>
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 py-1">
-        <img className="w-[25em] mx-auto my-4" src={Laptop} alt="/" />
+        <img
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="w-[25em] mx-auto my-4 cursor-none"
+          src={Laptop}
+          alt="/"
+        />
         <div className="flex flex-col justify-center pb-[5em]">
           <h3 className="text-mygreen font-medium md:text-2xl sm:text-1xl text-1xl my-4 py-2">
             Meet the Digital Wizard
