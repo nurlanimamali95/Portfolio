@@ -17,13 +17,25 @@ const variants = {
   },
 };
 
-const Contact = () => {
+const hoverVariants = {
+  hidden: {
+    scale: 1,
+  },
+  visible: {
+    scale: 1.1,
+    transition: {
+      type: "spring",
+      stiffness: 500,
+      ease: "linear",
+    },
+  },
+};
+
+const Form = () => {
   const ref = useRef();
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-
-  
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -109,12 +121,16 @@ const Contact = () => {
               name="message"
               className=" text-nurlan block w-full border-gray-300 rounded-md p-2 mb-4 resize-none"
             ></textarea>
-            <button className="bg-nurlan font-bold py-2 px-4 rounded-md hover:bg-buttery">
+            <motion.button
+              variants={hoverVariants}
+              whileHover="visible"
+              className="bg-nurlan font-bold py-2 px-4 rounded-md hover:bg-[#000000] hover>"
+            >
               Submit
-            </button>
+            </motion.button>
           </motion.form>
           {success && (
-            <div className="absolute top-[-3em] left-0 transition-opacity duration-500 opacity-100 bg-green-400 p-2 rounded-md">
+            <div className="absolute top-[-3em] left-0 transition-opacity duration-500 opacity-100 text-nurlan bg-buttery p-2 rounded-md">
               Message successfully sent! 😻
             </div>
           )}
@@ -129,4 +145,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Form;
