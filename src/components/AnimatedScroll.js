@@ -7,7 +7,7 @@ const svgVariants = {
     opacity: 1,
     y: [0, -2, 2, -2, 0],
     transition: {
-      delay: 2,
+      delay: 8,
       duration: 4,
       ease: "linear",
       repeat: Infinity,
@@ -21,8 +21,8 @@ const spanVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 2, // Adjust this to match the delay of the SVG animation
-      duration: 4, // Match the duration of the SVG animation
+      delay: 8,
+      duration: 4,
       ease: "linear",
       repeat: Infinity,
       repeatType: "mirror",
