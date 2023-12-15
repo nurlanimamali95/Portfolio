@@ -12,7 +12,6 @@ const hoverVariants = {
       type: "spring",
       stiffness: 500,
       ease: "linear",
-      
     },
   },
 };
@@ -20,10 +19,10 @@ const hoverVariants = {
 const Button = (props) => {
   return (
     <motion.div className="m-6">
-      <Link to={props.url}>
+      <Link to={props.url} target="_blank">
         <motion.button
           onClick={props.onClick}
-          className="bg-[#00df9a] text-nurlan w-[150] rounded-md font-medium mx-auto px-6 py-3 hover:bg-black hover:text-[#00df9a] my-6 md:mx-0"
+          className="bg-[#00df9a] text-nurlan w-[150] rounded-md font-medium mx-auto px-6 py-3 hover:bg-black hover:text-[#00df9a] my-6 md:mx-0 _blank"
           variants={hoverVariants}
           whileHover="visible"
         >
