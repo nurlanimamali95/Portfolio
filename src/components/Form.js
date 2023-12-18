@@ -42,31 +42,27 @@ const Form = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
 
-    emailjs
-      .sendForm(
-        "service_3hlu17w",
-        "template_w29y38k",
-        formRef.current,
-        "jTJHeT5uFZdIbRBSx"
-      )
-      .then(
-        (result) => {
-          setSuccess(true);
-          setName("");
-          setEmail("");
-          setMessage("");
-          setTimeout(() => {
-            setSuccess(false);
-          }, 3000);
-        },
-        (error) => {
-          setError(true);
-          setTimeout(() => {
-            setError(false);
-          }, 3000);
-        }
-      );
+    emailjs.sendForm(serviceId, templateId, formRef.current, userId).then(
+      (result) => {
+        setSuccess(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      },
+      (error) => {
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 3000);
+      }
+    );
   };
 
   return (
