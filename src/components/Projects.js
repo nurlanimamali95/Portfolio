@@ -23,6 +23,11 @@ const projectDetails = [
     demoUrl: "https://nurlanimamali95.github.io/SuperMarioQuiz/",
     sourceUrl: "https://github.com/nurlanimamali95/SuperMarioQuiz",
   },
+  {
+    image: require("../assets/JasmineTours.png"),
+    demoUrl: "https://jasminetours.nl/",
+    sourceUrl: "https://github.com/nurlanimamali95/jasmine-tour-events",
+  },
 ];
 
 const Projects = () => {
