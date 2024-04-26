@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { m, Variants } from "framer-motion";
+import { motion as m, Variants } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 const variants: Variants = {

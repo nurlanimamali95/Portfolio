@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { m } from "framer-motion";
+import { motion as m} from "framer-motion";
 import AnimatedScroll from "./AnimatedScroll";
 
 export default function Hero() {

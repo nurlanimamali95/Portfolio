@@ -1,5 +1,5 @@
 import React from "react";
-import { m, Variants } from "framer-motion";
+import { motion as m, Variants } from "framer-motion";
 
 const svgVariants: Variants = {
   hidden: { rotate: -180 },

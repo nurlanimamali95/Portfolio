@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion as m, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 type cardProps = {
   demoUrl: string;

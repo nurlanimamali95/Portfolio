@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { m } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 type buttonProps = {
   url: string;

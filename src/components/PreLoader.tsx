@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { m } from "framer-motion";
+import { motion as m } from "framer-motion";
 import cat from "../assets/loadercat1.gif";
 
 type preLoaderProps = {
@@ -16,8 +16,10 @@ export default function Preloader({ onFinishLoading }: preLoaderProps) {
         const newProgress = prevProgress + 1;
         if (newProgress === 100) {
           clearInterval(interval);
-          setIsLoading(false);
-          onFinishLoading();
+          setTimeout(() => {
+            setIsLoading(false);
+            onFinishLoading();
+          }, 0);
         }
         return newProgress;
       });

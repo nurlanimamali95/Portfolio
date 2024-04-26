@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Laptop from "../assets/meillustration.png";
-import { m, Variants } from "framer-motion";
+import { motion as m, Variants } from "framer-motion";
 import "./About.css";
 
 export default function About() {
