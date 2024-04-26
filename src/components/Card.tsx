@@ -1,8 +1,14 @@
 import React from "react";
 import Button from "./Button";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { m, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-const Card = (props) => {
+type cardProps = {
+  demoUrl: string;
+  sourceUrl: string;
+  image: string;
+};
+
+export default function Card({ demoUrl, sourceUrl, image }: cardProps) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -20,8 +26,8 @@ const Card = (props) => {
     ["-17.5deg", "17.5deg"]
   );
 
-  const handleMouseMove = (e) => {
-    const rect = e.target.getBoundingClientRect();
+  const handleMouseMove = (e: React.MouseEvent<HTMLImageElement>) => {
+    const rect = (e.target as HTMLImageElement).getBoundingClientRect();
 
     const width = rect.width;
     const height = rect.height;
@@ -41,10 +47,10 @@ const Card = (props) => {
     y.set(0);
   };
   return (
-    <motion.div className="w-full h-500 shadow-xl flex flex-col p-4 my-4 rounded-lg ">
+    <m.div className="w-full h-500 shadow-xl flex flex-col p-4 my-4 rounded-lg ">
       <div className="inline-block h-80 mx-auto mt-[-3rem] ">
-        <motion.img
-          src={props.image}
+        <m.img
+          src={image}
           className="w-full h-full object-cover curs"
           alt="Project Screenshot"
           onMouseMove={handleMouseMove}
@@ -57,11 +63,9 @@ const Card = (props) => {
         />
       </div>
       <div className="flex justify-center">
-        <Button title="Demo" url={props.demoUrl} />
-        <Button title="Source" url={props.sourceUrl} />
+        <Button title="Demo" url={demoUrl} />
+        <Button title="Source" url={sourceUrl} />
       </div>
-    </motion.div>
+    </m.div>
   );
-};
-
-export default Card;
+}

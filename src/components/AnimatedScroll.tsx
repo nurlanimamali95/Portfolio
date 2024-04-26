@@ -1,7 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m, Variants } from "framer-motion";
 
-const svgVariants = {
+const svgVariants: Variants = {
   hidden: { opacity: 0, y: 0 },
   visible: {
     opacity: 1,
@@ -16,7 +16,7 @@ const svgVariants = {
   },
 };
 
-const spanVariants = {
+const spanVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -30,10 +30,10 @@ const spanVariants = {
   },
 };
 
-const AnimatedScroll = () => {
+export default function AnimatedScroll() {
   return (
-    <motion.div className="flex items-center">
-      <motion.svg
+    <m.div className="flex items-center">
+      <m.svg
         width="50px"
         height="50px"
         viewBox="0 0 24.00 24.00"
@@ -79,17 +79,15 @@ const AnimatedScroll = () => {
             stroke-linejoin="round"
           />{" "}
         </g>
-      </motion.svg>
-      <motion.span
+      </m.svg>
+      <m.span
         className="font-hairline lg:mt-[-1em]"
         variants={spanVariants}
         initial="hidden"
         animate="visible"
       >
         Scroll Down
-      </motion.span>
-    </motion.div>
+      </m.span>
+    </m.div>
   );
-};
-
-export default AnimatedScroll;
+}

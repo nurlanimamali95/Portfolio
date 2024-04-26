@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Laptop from "../assets/meillustration.png";
-import { motion } from "framer-motion";
+import { m, Variants } from "framer-motion";
 import "./About.css";
 
-const About = () => {
+export default function About() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
   const [showCursor, setShowCursor] = useState(false);
 
   useEffect(() => {
-    const mouseMove = (e) => {
+    const mouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", mouseMove);
@@ -18,7 +18,7 @@ const About = () => {
     };
   }, []);
 
-  const variants = {
+  const variants: Variants = {
     visible: { x: mousePosition.x - 16, y: mousePosition.y - 16, opacity: 0 },
     text: {
       x: mousePosition.x - 16,
@@ -75,13 +75,11 @@ const About = () => {
           </p>
         </div>
       </div>
-      <motion.div
+      <m.div
         className={`cursor ${showCursor ? "visible" : "hidden"}`}
         variants={variants}
         animate={cursorVariant}
       />
     </div>
   );
-};
-
-export default About;
+}

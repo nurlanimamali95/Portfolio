@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { FaArrowUp } from "react-icons/fa";
 
-const ScrollUp = () => {
+export default function ScrollUp() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -40,6 +40,4 @@ const ScrollUp = () => {
       )}
     </>
   );
-};
-
-export default ScrollUp;
+}

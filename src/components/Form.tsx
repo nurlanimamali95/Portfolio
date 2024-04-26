@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { m, Variants } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-const variants = {
+const variants: Variants = {
   initial: {
     y: 500,
     opacity: 0,
@@ -17,7 +17,7 @@ const variants = {
   },
 };
 
-const hoverVariants = {
+const hoverVariants: Variants = {
   hidden: {
     scale: 1,
   },
@@ -31,38 +31,39 @@ const hoverVariants = {
   },
 };
 
-const Form = () => {
-  const ref = useRef();
-  const formRef = useRef();
+export default function Form() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID as string;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID as string;
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID as string;
 
-    emailjs.sendForm(serviceId, templateId, formRef.current, userId).then(
-      (result) => {
-        setSuccess(true);
-        setName("");
-        setEmail("");
-        setMessage("");
-        setTimeout(() => {
-          setSuccess(false);
-        }, 3000);
-      },
-      (error) => {
-        setError(true);
-        setTimeout(() => {
-          setError(false);
-        }, 3000);
-      }
-    );
+    if (formRef.current) {
+      emailjs.sendForm(serviceId, templateId, formRef.current, userId).then(
+        (result) => {
+          setSuccess(true);
+          setName("");
+          setEmail("");
+          setMessage("");
+          setTimeout(() => {
+            setSuccess(false);
+          }, 3000);
+        },
+        (error) => {
+          setError(true);
+          setTimeout(() => {
+            setError(false);
+          }, 3000);
+        }
+      );
+    }
   };
 
   return (
@@ -71,32 +72,31 @@ const Form = () => {
         <h3 className="text-center text-4xl font-bold mb-[2em]">Contact me</h3>
       </div>
 
-      <motion.div
-        ref={ref}
+      <m.div
         className="h-full max-w-[1024px] flex flex-col gap-10 justify-between items-center mx-auto mb-10 px-4 lg:flex-row"
         variants={variants}
         initial="initial"
         whileInView="animate"
       >
-        <motion.div className="flex-1 flex flex-col gap-10" variants={variants}>
-          <motion.h1 className="text-2xl font-bold" variants={variants}>
+        <m.div className="flex-1 flex flex-col gap-10" variants={variants}>
+          <m.h1 className="text-2xl font-bold" variants={variants}>
             Liked what you just saw?
-          </motion.h1>
-          <motion.div variants={variants}>
+          </m.h1>
+          <m.div variants={variants}>
             <h2 className="text-lg font-semibold">Mail Me</h2>
             <span className="text-gray-600 hover:text-buttery transition duration-700 ease-in-out">
               nurlanimamali@gmail.com
             </span>
-          </motion.div>
-          <motion.div variants={variants}>
+          </m.div>
+          <m.div variants={variants}>
             <h2 className="text-lg font-semibold">Call Me</h2>
             <span className="text-gray-600 hover:text-buttery duration-700 ease-in-out  ">
               +31627623727
             </span>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
         <div className="flex-1 relative w-[80vw] mb-[5em]">
-          <motion.form
+          <m.form
             ref={formRef}
             onSubmit={sendEmail}
             initial={{ opacity: 0 }}
@@ -129,14 +129,14 @@ const Form = () => {
               onChange={(e) => setMessage(e.target.value)}
               className=" text-nurlan block w-full border-gray-300 rounded-md p-2 mb-4 resize-none"
             ></textarea>
-            <motion.button
+            <m.button
               variants={hoverVariants}
               whileHover="visible"
               className="bg-nurlan font-bold py-2 px-4 rounded-md hover:bg-[#000000] hover>"
             >
               Submit
-            </motion.button>
-          </motion.form>
+            </m.button>
+          </m.form>
           {success && (
             <div className="absolute top-[-3em] left-0 transition-opacity duration-500 opacity-100 text-nurlan bg-buttery p-2 rounded-md">
               Message successfully sent! 😻
@@ -148,9 +148,7 @@ const Form = () => {
             </div>
           )}
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
-};
-
-export default Form;
+}

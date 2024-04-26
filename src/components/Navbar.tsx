@@ -2,7 +2,7 @@ import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import AnimatedLogo from "./AnimatedLogo";
 
-const Navbar = () => {
+export default function NavBar() {
   return (
     <div className="flex justify-between items-center  h-24 max-w-[1024px] mx-auto px-4 select-none">
       <div className="cursor-pointer">
@@ -35,6 +35,4 @@ const Navbar = () => {
       </ul>
     </div>
   );
-};
-
-export default Navbar;
+}
