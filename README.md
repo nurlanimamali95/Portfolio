@@ -18,6 +18,7 @@ You can access the live demo of this website [here](https://www.nurlanimamali.te
 ## Technologies Used
 
 - **React:** Used for building the frontend and managing the components.
+- **TypeScript:** The project was recently migrated from JSX to TSX for enhanced development and codebase robustness.
 - **Tailwind CSS:** Employed for styling and creating a sleek, modern UI.
 - **Framer Motion:** Implemented for creating engaging animations and transitions.
 - **email.js:** Integrated for handling the contact form submissions.
