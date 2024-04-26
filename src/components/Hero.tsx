@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { motion } from "framer-motion";
+import { motion as m} from "framer-motion";
 import AnimatedScroll from "./AnimatedScroll";
 
-const Hero = () => {
+export default function Hero() {
   const [startTyping, setStartTyping] = useState(false);
 
   useEffect(() => {
@@ -27,10 +27,9 @@ const Hero = () => {
       "MongoDB",
       "Tailwind",
     ],
-    loop: {},
+    loop: true,
     typeSpeed: 150,
     deleteSpeed: 100,
-    start: startTyping,
   });
 
   const textVariants = {
@@ -41,20 +40,20 @@ const Hero = () => {
   return (
     <div className="text-buttery select-none">
       <div className="max-w-[800px] w-full h-screen mx-auto text-center flex flex-col justify-center">
-        <motion.h1
+        <m.h1
           className="md:text-5xl sm:text-4xl text-4xl font-medium md:py-6"
           initial="hidden"
           animate="visible"
           variants={textVariants}
         >
           Welcome to My Portfolio I'm Nurlan Imamali, a Web Developer
-        </motion.h1>
+        </m.h1>
         <div className="flex justify-center items-center md:text-3xl sm:text-2xl text-xl m-5">
-          <motion.p variants={textVariants} initial="hidden" animate="visible">
+          <m.p variants={textVariants} initial="hidden" animate="visible">
             Creating Websites with{" "}
-            <span className="text-[#00df9a]">{typeEffect}</span>
-            <Cursor cursorStyle="❤️" cursorBlinking="false" />
-          </motion.p>
+            <span className="text-[#00df9a]">{startTyping && typeEffect}</span>
+            <Cursor cursorStyle="❤️" cursorBlinking={false} />
+          </m.p>
         </div>
         <div className="mt-[3em] sm:mt-[6em] mx-auto">
           <AnimatedScroll />
@@ -62,6 +61,4 @@ const Hero = () => {
       </div>
     </div>
   );
-};
-
-export default Hero;
+}

@@ -30,7 +30,7 @@ const projectDetails = [
   },
 ];
 
-const Projects = () => {
+export default function Projects() {
   return (
     <div id="projects" className="w-full py-[8rem] px-4 bg-nurlan">
       <div className="text-center mb-[8em]">
@@ -48,6 +48,4 @@ const Projects = () => {
       </div>
     </div>
   );
-};
-
-export default Projects;
+}

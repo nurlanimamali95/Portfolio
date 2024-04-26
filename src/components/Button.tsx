@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
+
+type buttonProps = {
+  url: string;
+  onClick?: () => void;
+  title: string;
+};
 
 const hoverVariants = {
   hidden: {
@@ -16,21 +22,19 @@ const hoverVariants = {
   },
 };
 
-const Button = (props) => {
+export default function Button({ url, onClick, title }: buttonProps) {
   return (
-    <motion.div className="m-6">
-      <Link to={props.url} target="_blank">
-        <motion.button
-          onClick={props.onClick}
+    <m.div className="m-6">
+      <Link to={url} target="_blank">
+        <m.button
+          onClick={onClick}
           className="bg-[#00df9a] text-nurlan w-[150] rounded-md font-medium mx-auto px-6 py-3 hover:bg-black hover:text-[#00df9a] my-6 md:mx-0 _blank"
           variants={hoverVariants}
           whileHover="visible"
         >
-          {props.title}
-        </motion.button>
+          {title}
+        </m.button>
       </Link>
-    </motion.div>
+    </m.div>
   );
-};
-
-export default Button;
+}

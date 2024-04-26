@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 const skillsData = [
   "HTML",
@@ -24,7 +24,7 @@ const fadeInAnimationVariants = {
     opacity: 0,
     y: 100,
   },
-  animate: (index) => ({
+  animate: (index: number) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -33,7 +33,7 @@ const fadeInAnimationVariants = {
   }),
 };
 
-const Skills = () => {
+export default function Skills() {
   return (
     <section
       id="skills"
@@ -44,7 +44,7 @@ const Skills = () => {
       </div>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 max-w-[53rem] ">
         {skillsData.map((skill, index) => (
-          <motion.li
+          <m.li
             className="bg-nurlan border-black rounded-xl px-5 py-3 text-buttery "
             key={index}
             variants={fadeInAnimationVariants}
@@ -56,11 +56,9 @@ const Skills = () => {
             custom={index}
           >
             {skill}
-          </motion.li>
+          </m.li>
         ))}{" "}
       </ul>
     </section>
   );
-};
-
-export default Skills;
+}

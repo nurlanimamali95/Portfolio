@@ -1,6 +1,6 @@
 import React from "react";
 
-const Bio = () => {
+export default function Bio() {
   return (
     <div>
       <h3>Meet the Sorcerer of the Digital Realm</h3>
@@ -14,6 +14,4 @@ const Bio = () => {
       </p>
     </div>
   );
-};
-
-export default Bio;
+}

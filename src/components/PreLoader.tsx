@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import cat from "../assets/loadercat1.gif";
 
-const Preloader = ({ onFinishLoading }) => {
+type preLoaderProps = {
+  onFinishLoading: () => void;
+};
+
+export default function Preloader({ onFinishLoading }: preLoaderProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
 
@@ -12,8 +16,10 @@ const Preloader = ({ onFinishLoading }) => {
         const newProgress = prevProgress + 1;
         if (newProgress === 100) {
           clearInterval(interval);
-          setIsLoading(false);
-          onFinishLoading();
+          setTimeout(() => {
+            setIsLoading(false);
+            onFinishLoading();
+          }, 0);
         }
         return newProgress;
       });
@@ -27,7 +33,7 @@ const Preloader = ({ onFinishLoading }) => {
       <div className="flex flex-col items-center justify-center h-screen">
         <img src={cat} alt="Cat Loader" className="w-32 h-32 mb-4" />
         <div className="w-64 h-6 bg-gray-200 rounded-full overflow-hidden relative">
-          <motion.div
+          <m.div
             className="h-full bg-buttery"
             style={{
               width: `${loadingProgress}%`,
@@ -41,6 +47,4 @@ const Preloader = ({ onFinishLoading }) => {
       </div>
     )
   );
-};
-
-export default Preloader;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <div className="md:flex md:flex-col md:items-center md:justify-center uppercase text-lg m-10 lg:flex-row">
       <p className="text-center">© Nurlan Imamali</p>
@@ -38,6 +38,4 @@ const Footer = () => {
       </p>
     </div>
   );
-};
-
-export default Footer;
+}
