@@ -17,6 +17,7 @@ const skillsData = [
   "Framer Motion",
   "Bootstrap",
   "MaterialUI",
+  "Payload CMS",
 ];
 
 const fadeInAnimationVariants = {
